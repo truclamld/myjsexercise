@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+    console.log("Hello World");
+
+    // Interpolated
+    const city = "Da Nang";
+    console.log("This company is located in %s", "Da Nang");
+    console.log("This company is located in ${city}");
+
+    // Styled
+    console.log("%c This is a styled text", "background-color: yellow; text-color: white; font-size:30px");
+
+    // warning!
+    console.warn("Warning: This may leave your web vulnerable to attack");
+
+    // Error :|
+    console.error("An error occured");
+
+    // Info
+    console.info("Tip: This can help improve your web's performance");
+
+    // Testing
+    a = 1
+    b = 2
+    console.assert(a+b == 1, "Wrong. Must be 1");
+
+    // clearing
+    console.clear();
+
+    // Viewing DOM Elements
+    const p = document.querySelector("p");
+    console.log(p);
+    console.dir(p);
+
+    // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(dog.name);
+      console.log("This is %s.", dog.name);
+      console.log("He is %i year old.", dog.age);
+      console.groupEnd();
+    })
+
+    // counting
+    console.count("Rik");
+    console.count("Rik");
+    console.count("kei");
+    console.count("Rik");
+    console.count("Rik");
+    console.count("kei");
+    console.count("Rik");
+    console.count("Rik");
+    console.count("kei");
+    console.count("kei");
+
+    // timing
+    console.time("fetching data...");
+    const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+  fetch(endpoint).then(raw => raw.json()).then(data => {
+    console.timeEnd("fetching data...");
+    console.log(data);
+  });
+  
+
+  </script>
+</body>
+</html>

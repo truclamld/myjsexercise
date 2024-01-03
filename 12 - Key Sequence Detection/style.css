@@ -1,0 +1,17 @@
+.key_row {
+    
+    align-items: center;
+}
+
+.top_row, .center_row, .bottom_row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.key {
+    padding: 2em;
+    margin: 1em;
+    border-style: solid;
+    border-radius: 10px;
+}
